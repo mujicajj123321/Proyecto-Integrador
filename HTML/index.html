@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyecto integrador</title>
+    <link rel="stylesheet" href="../Styles/styles.css">
+</head>
+<body>
+   <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="#formularios">Formularios</a></li>
+                <li><a href="#historial">Historial</a></li>
+                <li><a href="#resumenA">Resumen</a></li>
+                <li><a href="#botones">Otros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="seccion1" id="formularios">
+        <p><h1 id="titulo">Formulario de cultivo</h1></p>
+        <form id="FormularioCultivo">
+            <p><label>Tipo de cultivo: <p><input type="text" id="tipoCultivo" required></p></label></p>
+            <p><label>Variedad de la planta: <p><input type="text" id="variedadPlanta" required></p></label></p>
+            <p><label>Fecha de siembra: <p><input type="date" id="fechaSiembra" required></p></label></p>
+            <p><label>Etapa de crecimiento:
+                <p><select id="etapaCrecimiento">
+                    <option value="Siembra">Siembra</option>
+                    <option value="Crecimiento">Crecimiento</option>
+                    <option value="Cosecha">Cosecha</option>
+                </select></p>
+            </label></p>
+        </form>
+    </section>
+
+    <section class="seccion2">
+        <form id="FormularioCultivoGeo">
+            <p><label>Ubicación geográfica: <p><input type="text" id="ubicacion" required></p></label></p>
+            <p><label>Área del terreno (hectáreas): <p><input type="number" id="area" required></p></label></p>
+            <p><label>Tipo de suelo:
+                <p><select id="tipoSuelo">
+                    <option value="Arcilloso">Arcilloso</option>
+                    <option value="Arenoso">Arenoso</option>
+                    <option value="Franco">Franco</option>
+                </select></p>
+            </label></p>
+            <p><label>pH del suelo: <p><input type="number" step="0.1" id="phSuelo" required></p></label></p>
+            <p><label>Nivel de materia orgánica (%): <p><input type="number" step="0.1" id="materiaOrganica" required></p></label></p>
+            <p><label>Clima predominante:
+                <p><select id="clima">
+                    <option value="Seco">Seco</option>
+                    <option value="Húmedo">Húmedo</option>
+                </select></p>
+            </label></p>
+            <p><label>Temperatura promedio (°C): <p><input type="number" id="temperatura" required></p></label></p>
+            <p><label>Precipitaciones promedio (mm/mes): <p><input type="number" id="precipitaciones" required></p></label></p>
+            <p><label>Estación actual: <p><input type="text" id="estacion" required></p></label></p>
+            <p><label>Eventos extremos recientes: <p><input type="text" id="eventos" required></p></label></p>
+        </form>
+    </section>
+
+    <section class="seccion3">
+        <form id="FormularioCultivoRiego">
+            <p><label>Tipo de sistema de riego:
+                <p><select id="tipoRiego">
+                    <option value="Aspersión">Aspersión</option>
+                    <option value="Goteo">Goteo</option>
+                </select></p>
+            </label></p>
+            <p><label>Frecuencia de riego (veces/semana): <p><input type="number" id="frecuenciaRiego" required></p></label></p>
+            <p><label>Cantidad de agua por riego (litros/hectárea): <p><input type="number" id="cantidadAgua" required></p></label></p>
+            <p><label>Tipo de fertilizante:
+                <p><select id="fertilizante">
+                    <option value="Orgánico">Orgánico</option>
+                    <option value="Químico">Químico</option>
+                </select></p>
+            </label></p>
+            <p><label>Frecuencia de aplicación: <p><input type="text" id="frecuenciaAplicacion" required></p></label></p>
+            <p><label>Plagas o enfermedades detectadas: <p><input type="text" id="plagas" required></p></label></p>
+            <p><label>Uso de pesticidas o fungicidas: <p><input type="text" id="pesticidas" required></p></label></p>
+            <p><button type="submit">Enviar</button></p>
+        </form>
+    </section>
+    <section id="historial" class="historial">
+        <h1>Historial de cultivos</h1>
+
+    <div id="cultivos-container" class="cultivos-grid">
+
+    </div>
+
+    <div id="mensaje-vacio">
+        <h2>Aún no añades ningún cultivo en esta sesión</h2>
+    </div>
+    </section>
+
+    <section class="resumenC" id="resumenA">
+        <section id="resumen">
+        <h1>Objetivos</h1>
+        <p>1. Creación de sistema que tome datos relacionados al suelo.</p>
+        <p>2. Creación de una página que capture datos ingresados por el usuario para mandarlos a la IA por medio de APIs para su analisis y poder mostrarlo al usuario final.</p>
+        <p>3. Ayudar a los agricultores a mejorar sus cultivos usando IA y agricultura de precisión.</p>
+        <p>Con el fin de que  los agricultores pueden maximizar su producción a partir del uso de 
+           nuevas técnicas de agricultura que puedan adquirir a través de las IA, esto a partir de datos como lo son: El clima, el área de cultivo, el tipo de cultivo, etc. Para que la
+           IA pueda realizar recomendaciones teniendo en cuenta todas las variables anteriormente
+           mencionadas.</p>
+        <p>Hecho por: Andrés Parra y Joaquín Mujica.</p>
+        </section>
+    </section>
+
+    <section id="botones" class="botones">
+        <form id="mostrarHistorial" class="historialB">
+            <h1>Mostrar historial de cultivos</h1>
+            <button type="submit">Mostrar</button>
+        </form>
+        <form id="buscarFecha" class="fechaH">
+            <p><h1>Buscar historial por fecha</h1></p>
+            <p><label for="fechaHistorial">fecha:</label></p>
+            <p><input type="date" id="fechaHistorial" required></p>
+            <button type="submit">Buscar</button>
+        </form>
+        <form id="buscarCultivo" class="cultivoBus">
+            <h1>Buscar cultivo por variedad o tipo</h1>
+            <p><label for="cultivoB">Cultivo:</label></p>
+            <p><input type="text" id="cultivoB" required></p>
+            <p><button type="submit">Buscar</button></p>
+        </form>
+        <form id="exportar" class="Exportar">
+            <h1>Exportar historial de cultivos a PDF</h1>
+            <button id="exportarPDF">Exportar historial a PDF</button>
+        </form>
+    </section>
+
+    <script src="../JavaScript/jspdf.umd.min.js"></script>
+    <script src="../JavaScript/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,316 @@
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'Baskerville';
+    src: url('../Fonts/LibreBaskerville-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+body {
+    margin: 0;
+    font-family: 'Baskerville', serif;
+    color:#f4efe5;
+}
+
+section {
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+
+.seccion1 {
+    background: url('../images/09f747b0089d35caadff411bb81b3bdd-413193532.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.seccion2 {
+    background: url('../images/588829-forest-desktop-wallpaper-4k-ultra-hd-2845340530.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.seccion3 {
+    background: url('../images/cascada-en-la-naturaleza-11545-73954569.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.historial {
+    background: url('../images/hq-todofondos-4KparaPC6-2158700196.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.resumenC {
+    background: url('../images/atardecer-en-lago-4285-2515003605.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.botones {
+    background: url('../images/0ecbb01b508cd489e0101c48c35fe9dd-2194425907.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+#Formularios{
+    padding-top: 80px; 
+    margin-top: -80px; 
+}
+
+#titulo{
+    text-align: center;
+    background-color: #5e673f;
+    border-radius: 15px;
+    border:2px solid black;
+    color:#f4efe5;
+    padding: 10px;
+}
+
+#FormularioCultivo input,
+#FormularioCultivo select{
+    background-color:#303520;
+    border-color: #303520;
+    border-radius: 5px;
+    color:#f4efe5;
+    font-family: 'Baskerville', serif;
+}
+
+#FormularioCultivo{
+    font-size: x-large;
+    color:#f4efe5;
+    margin-left: 1000px;
+    background-color:#5e673f;
+    padding: 10px;
+    border:2px solid black;
+    border-radius: 15px;
+    text-align: center;
+    height: 450px;
+    width: 300px;
+}
+
+#FormularioCultivoGeo input,
+#FormularioCultivoGeo select{
+    background-color:#405912;
+    border-color: #405912;
+    border-radius: 5px;
+    color:#f4efe5;
+    font-family: 'Baskerville', serif;
+}
+
+#FormularioCultivoGeo{
+    color:#f4efe5;
+    font-size: larger;
+    margin-right:1000px;
+    background-color:#203408;
+    padding: 10px;
+    border:2px solid black;
+    border-radius: 15px;
+    text-align: center;
+    height: 915px;
+    width: 350px;
+}
+
+#FormularioCultivoRiego input,
+#FormularioCultivoRiego select,
+#FormularioCultivoRiego button{
+    background-color:#7d822d;
+    border-color: #7d822d;
+    border-radius: 5px;
+    color:#f4efe5;
+    font-family: 'Baskerville', serif;
+}
+
+#FormularioCultivoRiego{
+    color:#f4efe5;
+    font-size: x-large;
+    margin-left: 1000px;
+    background-color:#394912;
+    padding: 10px;
+    border:2px solid black;
+    border-radius: 15px;
+    text-align: center;
+    height: 850px;
+    width: 500px;
+}
+
+#FormularioCultivoRiego button{
+    font-size: larger;
+    padding: 5px;
+}
+
+#resumen{
+    background-color: #427098;
+    color: #f4efe5;
+    border-radius: 15px;
+    padding: 15px;
+    width: 700px;
+    height:400px;
+    padding:40px;
+}
+
+#historial{
+    background-color: #1e1e1e; 
+    padding: 50px;
+    color: #f4efe5; 
+    min-height: 100vh; 
+}
+
+#botones{
+    background-color: #1e1e1e; 
+    padding: 50px;
+    color: #f4efe5; 
+    min-height: 100vh; 
+}
+
+
+.historialB{
+    background-color: #2c3213;
+    color:#f4efe5;
+    border-radius: 15px;
+    text-align: center;
+    width: 300px;
+    height: 150px;
+    padding: 10px;
+}
+
+.historialB button{
+    background-color: #3d4c18;
+    border-radius: 15px;
+    color:#f4efe5;
+    border-color: #3d4c18;
+    padding:10px;
+    font-family: 'Baskerville', serif;
+}
+
+.fechaH{
+    margin-top: 10px;
+    background-color: #2c3213;
+    color:#f4efe5;
+    border-radius: 15px;
+    text-align: center;
+    width: 300px;
+    height: 240px;
+    padding: 10px;
+}
+
+.fechaH button,
+.fechaH input{
+    background-color: #3d4c18;
+    border-radius: 15px;
+    color:#f4efe5;
+    border-color: #3d4c18;
+    padding:10px;
+    font-family: 'Baskerville', serif;
+}
+
+.cultivoBus{
+    margin-top: 10px;
+    background-color: #2c3213;
+    color:#f4efe5;
+    border-radius: 15px;
+    text-align: center;
+    width: 300px;
+    height: 235px;
+    padding: 10px;
+}
+
+.cultivoBus button,
+.cultivoBus input{
+    background-color: #3d4c18;
+    border-radius: 15px;
+    color:#f4efe5;
+    border-color: #3d4c18;
+    padding:10px;
+    font-family: 'Baskerville', serif;
+}
+
+
+#cultivos-container.cultivos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  max-height: 600px;
+  overflow-y: auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+
+.cultivo-card {
+  background-color: #3d1e2b;
+  border-radius: 8px;
+  color:#f4efe5;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.cultivo-card h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+
+hr {
+  border: none;
+  border-top: 1px solid #000000;
+  margin: 1rem 0;
+}
+
+.Exportar{
+    margin-top: 10px;
+    background-color: #2c3213;
+    color:#f4efe5;
+    border-radius: 15px;
+    text-align: center;
+    width: 300px;
+    height: 150px;
+    padding: 10px;
+}
+
+.Exportar button,
+.Exportar input{
+    background-color: #3d4c18;
+    border-radius: 15px;
+    color:#f4efe5;
+    border-color: #3d4c18;
+    padding:10px;
+    font-family: 'Baskerville', serif;
+}
