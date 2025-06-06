@@ -89,6 +89,11 @@ section {
     background-size: cover;
 }
 
+.Recomendacion {
+    background: url('../images/6acbpn-2619885175.jpg') no-repeat center center;
+    background-size: cover;
+}
+
 #Formularios{
     padding-top: 80px; 
     margin-top: -80px; 
@@ -115,14 +120,18 @@ section {
 #FormularioCultivo{
     font-size: x-large;
     color:#f4efe5;
-    margin-left: 1000px;
     background-color:#5e673f;
     padding: 10px;
     border:2px solid black;
     border-radius: 15px;
     text-align: center;
-    height: 450px;
-    width: 300px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    max-height: 600px;
+    overflow-y: auto;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 #FormularioCultivoGeo input,
@@ -137,14 +146,18 @@ section {
 #FormularioCultivoGeo{
     color:#f4efe5;
     font-size: larger;
-    margin-right:1000px;
     background-color:#203408;
     padding: 10px;
     border:2px solid black;
     border-radius: 15px;
     text-align: center;
-    height: 915px;
-    width: 350px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    max-height: 600px;
+    overflow-y: auto;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 #FormularioCultivoRiego input,
@@ -159,15 +172,19 @@ section {
 
 #FormularioCultivoRiego{
     color:#f4efe5;
-    font-size: x-large;
-    margin-left: 1000px;
+    font-size: larger;
     background-color:#394912;
     padding: 10px;
     border:2px solid black;
     border-radius: 15px;
     text-align: center;
-    height: 850px;
-    width: 500px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    max-height: 600px;
+    overflow-y: auto;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 #FormularioCultivoRiego button{
@@ -193,73 +210,71 @@ section {
 }
 
 #botones{
-    background-color: #1e1e1e; 
-    padding: 50px;
-    color: #f4efe5; 
-    min-height: 100vh; 
-}
-
-
-.historialB{
-    background-color: #2c3213;
     color:#f4efe5;
+    font-size: larger;
+    background-color:#203408;
+    padding: 10px;
+    border:2px solid black;
     border-radius: 15px;
     text-align: center;
-    width: 300px;
-    height: 150px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    max-height: 600px;
+    overflow-y: auto;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+#botones input,
+#botones button{
+    background-color: #7d822d;
+    color:#f4efe5;
+    border-radius: 10px;
+    border-color:#7d822d;
+}
+
+#mostrarHistorial{
+    color:#f4efe5;
+    font-size: larger;
+    background-color:#203408;
     padding: 10px;
-}
-
-.historialB button{
-    background-color: #3d4c18;
-    border-radius: 15px;
-    color:#f4efe5;
-    border-color: #3d4c18;
-    padding:10px;
-    font-family: 'Baskerville', serif;
-}
-
-.fechaH{
-    margin-top: 10px;
-    background-color: #2c3213;
-    color:#f4efe5;
+    border:2px solid black;
     border-radius: 15px;
     text-align: center;
-    width: 300px;
-    height: 240px;
+}
+
+#buscarFecha{
+    color:#f4efe5;
+    font-size: larger;
+    background-color:#203408;
     padding: 10px;
-}
-
-.fechaH button,
-.fechaH input{
-    background-color: #3d4c18;
-    border-radius: 15px;
-    color:#f4efe5;
-    border-color: #3d4c18;
-    padding:10px;
-    font-family: 'Baskerville', serif;
-}
-
-.cultivoBus{
-    margin-top: 10px;
-    background-color: #2c3213;
-    color:#f4efe5;
+    border:2px solid black;
     border-radius: 15px;
     text-align: center;
-    width: 300px;
-    height: 235px;
-    padding: 10px;
 }
 
-.cultivoBus button,
-.cultivoBus input{
-    background-color: #3d4c18;
-    border-radius: 15px;
+#buscarCultivo{
     color:#f4efe5;
-    border-color: #3d4c18;
-    padding:10px;
-    font-family: 'Baskerville', serif;
+    font-size: larger;
+    background-color:#203408;
+    padding: 10px;
+    border:2px solid black;
+    border-radius: 15px;
+    text-align: center;
 }
+
+#exportar{
+    color:#f4efe5;
+    font-size: larger;
+    background-color:#203408;
+    padding: 10px;
+    border:2px solid black;
+    border-radius: 15px;
+    text-align: center;
+}
+
+
 
 
 #cultivos-container.cultivos-grid {
@@ -294,23 +309,37 @@ hr {
   margin: 1rem 0;
 }
 
-.Exportar{
-    margin-top: 10px;
-    background-color: #2c3213;
-    color:#f4efe5;
-    border-radius: 15px;
-    text-align: center;
-    width: 300px;
-    height: 150px;
-    padding: 10px;
+
+#recomendacion {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centra el contenido horizontalmente */
+  padding: 2rem 1rem;
+  gap: 2rem;
+  overflow-y: auto;
+  max-height: 90vh;
+  scroll-behavior: smooth;
+  color:#f4efe5;
 }
 
-.Exportar button,
-.Exportar input{
-    background-color: #3d4c18;
-    border-radius: 15px;
+
+.recomendaciones-grid{
+  background-color: #895921; 
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 700px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  position: relative; 
+  margin: 1rem auto;
+  color:#f4efe5;
+}
+
+.recomendacion button{
+    background-color: #c27d27;
+    border-color: #c27d27;
     color:#f4efe5;
-    border-color: #3d4c18;
-    padding:10px;
-    font-family: 'Baskerville', serif;
+    padding: 10px;
 }

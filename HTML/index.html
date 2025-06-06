@@ -11,6 +11,7 @@
             <ul>
                 <li><a href="#formularios">Formularios</a></li>
                 <li><a href="#historial">Historial</a></li>
+                <li><a href="#recomendacio">Inteligencia Artificial</a></li>
                 <li><a href="#resumenA">Resumen</a></li>
                 <li><a href="#botones">Otros</a></li>
             </ul>
@@ -78,7 +79,7 @@
             <p><label>Frecuencia de aplicación: <p><input type="text" id="frecuenciaAplicacion" required></p></label></p>
             <p><label>Plagas o enfermedades detectadas: <p><input type="text" id="plagas" required></p></label></p>
             <p><label>Uso de pesticidas o fungicidas: <p><input type="text" id="pesticidas" required></p></label></p>
-            <p><button type="submit">Enviar</button></p>
+            <p><button type="submit" onclick="enviarMensaje()" ">Enviar</button></p>
         </form>
     </section>
     <section id="historial" class="historial">
@@ -91,6 +92,13 @@
     <div id="mensaje-vacio">
         <h2>Aún no añades ningún cultivo en esta sesión</h2>
     </div>
+    </section>
+
+    <section class="Recomendacion" id="recomendacio">
+            <div id="recomendacion">
+            <button id="btnIA">Generar recomendación IA</button>
+            <div id="recomendaciones-container" class="recomendaciones-grid"></div>
+            </div>
     </section>
 
     <section class="resumenC" id="resumenA">
@@ -128,10 +136,21 @@
             <h1>Exportar historial de cultivos a PDF</h1>
             <button id="exportarPDF">Exportar historial a PDF</button>
         </form>
+        <form id="exportar" class="Exportar">
+            <h1>Exportar historial de respuestas a PDF</h1>
+            <button id="exportarPDFIA">Exportar historial a PDF</button>
+        </form>
+        
     </section>
 
+
+
+
+
     <script src="../JavaScript/jspdf.umd.min.js"></script>
-    <script src="../JavaScript/script.js"></script>
+    <script src="../JavaScript/scriptIA.js"></script> 
+    <script src="../JavaScript/script.js"></script>  
+
 
 </body>
 </html>

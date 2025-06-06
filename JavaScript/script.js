@@ -10,7 +10,30 @@ class Cultivo {
         this.fertilizante = new Fertilizante(tipoFertilizante, frecuenciaFertilizante, plagas, pesticidas);
     }
 
-    
+    generarRecomendacion(){
+        return `dame consejos para el siguiente cultivo:
+        tipo de cultivo: ${this.tipo},
+        variedad de la planta: ${this.variedad},
+        etapa de crecimiento: ${this.etapa},
+        ubicacion: ${this.geografia.ubicacion},
+        area en hectareas: ${this.geografia.area},
+        tipo de suelo: ${this.geografia.tipoSuelo},
+        ph del suelo: ${this.geografia.phSuelo},
+        clima promedio: ${this.condicionAtmosferica.climaP},
+        temperatura promedio: ${this.condicionAtmosferica.temperaturaP},
+        estacion actual: ${this.condicionAtmosferica.estacionA},
+        eventos extremos recientes: ${this.condicionAtmosferica.eventosExtremos},
+        tipo de sistema de riego: ${this.sistemaRiego.tipoSistema},
+        frecuencia de riego: ${this.sistemaRiego.frecuenciaAgua},
+        cantidad de agua por riego en litros/hectarea: ${this.sistemaRiego.cantidadAgua},
+        tipo de fertilizante: ${this.fertilizante.tipoFertilizante},
+        frecuencia de fertilizante: ${this.fertilizante.frecuenciaFertilizante},
+        plagas: ${this.fertilizante.plagas},
+        pesticidas: ${this.fertilizante.pesticidas}.
+        y dime al inicio de tu respuesta el tipo y variedad del cultivo. que la respuesta sea muy completa, no uses nada para formatear el texto, solo ponlo sin formato.Enumera cada recomendación.
+        `
+    }
+
 
 static desdeObjeto(obj) {
     return new Cultivo(
@@ -118,6 +141,7 @@ class Fertilizante {
 
 
 let cultivos = []
+let respuestasIA = [];
 
 const historialGuardado = localStorage.getItem("cultivos");
 if (historialGuardado) {
@@ -132,6 +156,28 @@ if (historialGuardado) {
     });
     };
 }
+
+const historialIARecuperado = localStorage.getItem("historialIA");
+if (historialIARecuperado) {
+    const historialIAJSON = JSON.parse(historialIARecuperado);
+    respuestasIA = historialIAJSON.map(c => RespuestasIA.desdeObjeto(c));
+
+    if (respuestasIA.length === 0) {
+        console.log("No has generado recomendaciones");
+    } else {
+        document.getElementById("recomendaciones-container").innerHTML = "";
+        
+        // Invertir el orden para mostrar la más reciente primero
+        respuestasIA.slice().reverse().forEach(r => {
+            document.getElementById("recomendaciones-container").innerHTML += `
+                <div class="respuesta-ia">
+                    <p>${r.mostrarRespuesta()}</p>
+                </div><hr>`;
+        });
+    }
+}
+
+
 document.getElementById("FormularioCultivoRiego").addEventListener("submit", event=>{
     event.preventDefault();
     console.log("Formulario enviado");
@@ -280,3 +326,42 @@ document.getElementById("exportarPDF").addEventListener("click", () => {
 
     doc.save("historial_cultivos.pdf");
 });
+
+document.getElementById("exportarPDFIA").addEventListener("click", () => {
+    if (respuestasIA.length === 0) {
+        alert("No hay respuestas para exportar.");
+        return;
+    }
+
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    let y = 10;
+
+    doc.setFontSize(12);
+    doc.text("Historial de recomendaciones", 10, y);
+    y += 10;
+
+    respuestasIA.forEach((respuesta, index) => {
+        const titulo = `Recomendación ${index + 1}:`;
+        const cuerpo = respuesta.mostrarRespuesta();
+
+        // Divide el texto largo en líneas que quepan en 180mm
+        const lineasTitulo = doc.splitTextToSize(titulo, 180);
+        const lineasCuerpo = doc.splitTextToSize(cuerpo, 180);
+
+        // Dibuja cada línea, agregando salto de página si es necesario
+        [...lineasTitulo, ...lineasCuerpo].forEach(linea => {
+            if (y >= 280) {
+                doc.addPage();
+                y = 10;
+            }
+            doc.text(linea, 10, y);
+            y += 7;
+        });
+
+        y += 5; // espacio entre recomendaciones
+    });
+
+    doc.save("Historial_recomendaciones.pdf");
+});
+
