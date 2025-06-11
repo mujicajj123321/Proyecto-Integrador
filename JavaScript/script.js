@@ -167,7 +167,7 @@ if (historialIARecuperado) {
     } else {
         document.getElementById("recomendaciones-container").innerHTML = "";
         
-        // Invertir el orden para mostrar la más reciente primero
+
         respuestasIA.slice().reverse().forEach(r => {
             document.getElementById("recomendaciones-container").innerHTML += `
                 <div class="respuesta-ia">
@@ -345,11 +345,11 @@ document.getElementById("exportarPDFIA").addEventListener("click", () => {
         const titulo = `Recomendación ${index + 1}:`;
         const cuerpo = respuesta.mostrarRespuesta();
 
-        // Divide el texto largo en líneas que quepan en 180mm
+
         const lineasTitulo = doc.splitTextToSize(titulo, 180);
         const lineasCuerpo = doc.splitTextToSize(cuerpo, 180);
 
-        // Dibuja cada línea, agregando salto de página si es necesario
+
         [...lineasTitulo, ...lineasCuerpo].forEach(linea => {
             if (y >= 280) {
                 doc.addPage();
@@ -359,7 +359,7 @@ document.getElementById("exportarPDFIA").addEventListener("click", () => {
             y += 7;
         });
 
-        y += 5; // espacio entre recomendaciones
+        y += 5; 
     });
 
     doc.save("Historial_recomendaciones.pdf");
